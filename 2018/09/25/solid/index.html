@@ -5,19 +5,19 @@
   
 
   
-  <title>java 安全程式設計 | Hexo</title>
+  <title>solid | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用filter過濾/變更跳脫字元跳脫字元表單 私密部署不放置web.xml檔，改用annotation設計＠WebFilter(urlPatterns={&amp;quot;/*&amp;quot;}) 前端驗證不要丟到server端 EX: 帳密長度 必要輸入驗證後端驗證####      雜湊 利用java.security.MessageDigest類別實作     sql injection     d">
+  <meta name="description" content="真的很討厭接別人的程式＠＠ 不是說前人寫得不好，而是程式在寫的時候有當時想法、技術的考量，現在看起來不是那麼適合! 更有可能是我程度不夠～“～ 看了看一些關於重構的文章 關於重構 嗯...別沒事找事做... 就顧好現在的功能吧～技術債這種事以後再說吧Orz... 為了近期開發的功能，看了一些關於程式設計的文件，記錄一下 物件導向程式設計基本原則 - SOLID">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java 安全程式設計">
-<meta property="og:url" content="http://ShenArDan.github.io.git/2018/06/26/廢文/index.html">
+<meta property="og:title" content="solid">
+<meta property="og:url" content="http://ShenArDan.github.io.git/2018/09/25/solid/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="利用filter過濾/變更跳脫字元跳脫字元表單 私密部署不放置web.xml檔，改用annotation設計＠WebFilter(urlPatterns={&amp;quot;/*&amp;quot;}) 前端驗證不要丟到server端 EX: 帳密長度 必要輸入驗證後端驗證####      雜湊 利用java.security.MessageDigest類別實作     sql injection     d">
+<meta property="og:description" content="真的很討厭接別人的程式＠＠ 不是說前人寫得不好，而是程式在寫的時候有當時想法、技術的考量，現在看起來不是那麼適合! 更有可能是我程度不夠～“～ 看了看一些關於重構的文章 關於重構 嗯...別沒事找事做... 就顧好現在的功能吧～技術債這種事以後再說吧Orz... 為了近期開發的功能，看了一些關於程式設計的文件，記錄一下 物件導向程式設計基本原則 - SOLID">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-26T07:50:36.683Z">
+<meta property="og:updated_time" content="2018-09-25T06:34:53.985Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java 安全程式設計">
-<meta name="twitter:description" content="利用filter過濾/變更跳脫字元跳脫字元表單 私密部署不放置web.xml檔，改用annotation設計＠WebFilter(urlPatterns={&amp;quot;/*&amp;quot;}) 前端驗證不要丟到server端 EX: 帳密長度 必要輸入驗證後端驗證####      雜湊 利用java.security.MessageDigest類別實作     sql injection     d">
+<meta name="twitter:title" content="solid">
+<meta name="twitter:description" content="真的很討厭接別人的程式＠＠ 不是說前人寫得不好，而是程式在寫的時候有當時想法、技術的考量，現在看起來不是那麼適合! 更有可能是我程度不夠～“～ 看了看一些關於重構的文章 關於重構 嗯...別沒事找事做... 就顧好現在的功能吧～技術債這種事以後再說吧Orz... 為了近期開發的功能，看了一些關於程式設計的文件，記錄一下 物件導向程式設計基本原則 - SOLID">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-廢文" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-solid" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/26/廢文/" class="article-date">
-  <time datetime="2018-06-26T14:49:31.000Z" itemprop="datePublished">2018-06-26</time>
+    <a href="/2018/09/25/solid/" class="article-date">
+  <time datetime="2018-09-25T06:11:50.000Z" itemprop="datePublished">2018-09-25</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      java 安全程式設計
+      solid
     </h1>
   
 
@@ -86,33 +86,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="利用filter過濾-變更跳脫字元"><a href="#利用filter過濾-變更跳脫字元" class="headerlink" title="利用filter過濾/變更跳脫字元"></a>利用filter過濾/變更跳脫字元</h4><p><a href="https://www.freeformatter.com/html-entities.html" target="_blank" rel="noopener">跳脫字元表單</a></p>
-<h4 id="私密部署不放置web-xml檔，改用annotation設計"><a href="#私密部署不放置web-xml檔，改用annotation設計" class="headerlink" title="私密部署不放置web.xml檔，改用annotation設計"></a>私密部署不放置web.xml檔，改用annotation設計</h4><pre><code>＠WebFilter(urlPatterns={&quot;/*&quot;})
-</code></pre><h4 id="前端驗證不要丟到server端-EX-帳密長度-必要輸入驗證"><a href="#前端驗證不要丟到server端-EX-帳密長度-必要輸入驗證" class="headerlink" title="前端驗證不要丟到server端 EX: 帳密長度 必要輸入驗證"></a>前端驗證不要丟到server端 EX: 帳密長度 必要輸入驗證</h4><h4 id="後端驗證"><a href="#後端驗證" class="headerlink" title="後端驗證"></a>後端驗證</h4><p>#### 
-    雜湊 利用java.security.MessageDigest類別實作
-    sql injection
-    dao pattern
-    stringbuffer
-    dependency injection</p>
-<h3 id="安裝spring"><a href="#安裝spring" class="headerlink" title="安裝spring"></a>安裝spring</h3><pre><code>properties&gt; project facets &gt;lib 勾選 spring persistence
-</code></pre><p>** mysql時區問題解決方式： 於url設定後面加上？serverTimezone=UTC</p>
-<jsp cookie-config="">
+        <p>真的很討厭接別人的程式＠＠</p>
+<p>不是說前人寫得不好，而是程式在寫的時候有當時想法、技術的考量，現在看起來不是那麼適合!</p>
+<p>更有可能是我程度不夠～“～</p>
+<p>看了看一些關於重構的文章</p>
+<p><a href="https://www.ptt.cc/bbs/Soft_Job/M.1537805551.A.271.html " target="_blank" rel="noopener">關於重構</a></p>
+<p>嗯...別沒事找事做...</p>
+<p>就顧好現在的功能吧～技術債這種事以後再說吧Orz...</p>
+<p>為了近期開發的功能，看了一些關於程式設計的文件，記錄一下
+<a href="https://skyyen999.gitbooks.io/-study-design-pattern-in-java/content/oodPrinciple.html" target="_blank" rel="noopener">物件導向程式設計基本原則 - SOLID</a></p>
 
-<pre><code>error 405 &gt; 傳輸方式錯誤
-requestdispatcher
-</code></pre><p>restful</p>
-<pre><code>front end controller
-jax-rs
-javax.ws.rs
-### 不要用網頁當作服務
-php
-</code></pre><h2></h2>
-
-</jsp>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ShenArDan.github.io.git/2018/06/26/廢文/" data-id="cjmhcmtvh0003fx6qkppwr6w1" class="article-share-link">Share</a>
+      <a data-url="http://ShenArDan.github.io.git/2018/09/25/solid/" data-id="cjmhcmtvf0002fx6q1snhnqcb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,19 +108,10 @@ php
     
 <nav id="article-nav">
   
-    <a href="/2018/09/25/solid/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          solid
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/26/agile/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/26/廢文/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">agile</div>
+      <div class="article-nav-title">java 安全程式設計</div>
     </a>
   
 </nav>
